@@ -407,6 +407,10 @@ WindowHandle WindowImplCocoa::getSystemHandle() const
     return [m_delegate getSystemHandle];
 }
 
+WindowHandle WindowImplCocoa::getWindowHandle() const
+{
+    return [m_delegate getSystemHandle];
+}
 
 ////////////////////////////////////////////////////////////
 Vector2i WindowImplCocoa::getPosition() const
