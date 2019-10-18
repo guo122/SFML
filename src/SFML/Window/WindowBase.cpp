@@ -315,6 +315,13 @@ WindowHandle WindowBase::getWindowHandle() const
 
 
 ////////////////////////////////////////////////////////////
+bool WindowBase::createVulkanSurface(const VkInstance& instance, VkSurfaceKHR& surface, const VkAllocationCallbacks* allocator)
+{
+    return m_impl ? m_impl->createVulkanSurface(instance, surface, allocator) : false;
+}
+
+
+////////////////////////////////////////////////////////////
 void WindowBase::onCreate()
 {
     // Nothing by default

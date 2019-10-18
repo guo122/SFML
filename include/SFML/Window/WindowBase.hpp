@@ -31,6 +31,7 @@
 #include <SFML/Window/Cursor.hpp>
 #include <SFML/Window/Export.hpp>
 #include <SFML/Window/VideoMode.hpp>
+#include <SFML/Window/Vulkan.hpp>
 #include <SFML/Window/WindowHandle.hpp>
 #include <SFML/Window/WindowStyle.hpp>
 #include <SFML/System/Clock.hpp>
@@ -394,6 +395,18 @@ public:
     WindowHandle getSystemHandle() const;
     
     WindowHandle getWindowHandle() const;
+
+    ////////////////////////////////////////////////////////////
+    /// \brief Create a Vulkan rendering surface
+    ///
+    /// \param instance  Vulkan instance
+    /// \param surface   Created surface
+    /// \param allocator Allocator to use
+    ///
+    /// \return True if surface creation was successful, false otherwise
+    ///
+    ////////////////////////////////////////////////////////////
+    bool createVulkanSurface(const VkInstance& instance, VkSurfaceKHR& surface, const VkAllocationCallbacks* allocator = 0);
 
 protected:
 
